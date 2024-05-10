@@ -316,7 +316,6 @@ contigmem_cdev_pager_ctor(void *handle, vm_ooffset_t size, vm_prot_t prot,
 
 	cd = &contigmem_device_list[vmh->device_index];
 	buf = &cd->cm_buffers[vmh->buffer_index];
-		vmh, vmh->buffer_index, vmh->device_index, cd, buf, buf->refcnt);
 
 	atomic_add_int(&contigmem_refcnt, 1);
 	atomic_add_int(&cd->cm_refcnt, 1);
